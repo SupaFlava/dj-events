@@ -10,7 +10,7 @@ export default async (req, res) => {
         secure: process.env.NODE_ENV !== "development",
         expires: new Date(0),
         sameSite: "strict",
-        path: "/ ",
+        path: "/",
       })
     );
     res.status(200).json({ message: "success" });

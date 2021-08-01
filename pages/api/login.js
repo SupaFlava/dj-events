@@ -23,7 +23,7 @@ export default async (req, res) => {
           secure: process.env.NODE_ENV !== "development",
           maxAge: 60 * 60 * 24 * 7, // 1 week
           sameSite: "strict",
-          path: "/ ",
+          path: "/",
         })
       );
       res.status(200).json({ user: data.user });
