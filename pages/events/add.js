@@ -10,7 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 export default function AddEventPage({ token }) {
   const [values, setValues] = useState({
     name: "",
-    perfomers: "",
+    performers: "",
+    venue: "",
     address: "",
     date: "",
     time: "",
@@ -24,8 +25,7 @@ export default function AddEventPage({ token }) {
       (element) => element === ""
     );
     if (hasEmptyFields) {
-      toast.error("Please fill in all fields");
-      return;
+      return toast.error("Please fill in all fields");
     }
     const res = await fetch(`${API_URL}/events`, {
       method: "POST",
