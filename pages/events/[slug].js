@@ -43,7 +43,7 @@ export default function EventPage({ evt }) {
   );
 }
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events`);
   const events = await res.json();
 
   const paths = events.data.map((evt) => ({
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 }
 export async function getServerSideProps({ query: { slug } }) {
   const res = await fetch(
-    `${API_URL}/api/events?filters[slug]=${slug}&populate=%2A`
+    `${API_URL}/events?filters[slug]=${slug}&populate=%2A`
   );
   const events = await res.json();
   const evt = events.data.find((item) => item.attributes.slug == slug);

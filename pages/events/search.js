@@ -30,7 +30,7 @@ export async function getServerSideProps({ query: { term } }) {
     },
   });
 
-  const res = await fetch(`${API_URL}/api/events?${query}&populate=%2A`);
+  const res = await fetch(`${API_URL}/events?${query}&populate=%2A`);
   const events = await res.json();
 
   return {

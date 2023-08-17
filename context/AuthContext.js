@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   // Register User
   const register = async (user) => {
-    const res = await fetch(`${NEXT_URL}/api/register`, {
+    const res = await fetch(`${NEXT_URL}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
   };
   //Login User
   const login = async ({ email: identifier, password }) => {
-    const res = await fetch(`${NEXT_URL}/api/login`, {
+    const res = await fetch(`${NEXT_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
   };
   //Logout User
   const logout = async (user) => {
-    const res = await fetch(`${NEXT_URL}/api/logout`, {
+    const res = await fetch(`${NEXT_URL}/logout`, {
       method: "POST",
     });
     if (res.ok) {
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
   };
   //check login user
   const checkUserLogginIn = async (user) => {
-    const res = await fetch(`${NEXT_URL}/api/user`);
+    const res = await fetch(`${NEXT_URL}/user`);
     const data = await res.json();
     if (res.ok) {
       setUser(data.user);
