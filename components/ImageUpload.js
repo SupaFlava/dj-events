@@ -10,7 +10,7 @@ export default function ImageUpload({ evtId, imageUploaded, token }) {
     formData.append("ref", "events");
     formData.append("refId", evtId);
     formData.append("field", "image");
-    const res = await fetch(`${API_URL}/upload`, {
+    const res = await fetch(`${API_URL}/api/upload`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

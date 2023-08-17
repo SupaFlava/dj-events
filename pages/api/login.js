@@ -4,7 +4,7 @@ import cookie from "cookie";
 export default async (req, res) => {
   if (req.method === "POST") {
     const { identifier, password } = req.body;
-    const strapiRes = await fetch(`${API_URL}/auth/local`, {
+    const strapiRes = await fetch(`${API_URL}/api/auth/local`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

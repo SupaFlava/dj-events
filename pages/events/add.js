@@ -27,7 +27,7 @@ export default function AddEventPage({ token }) {
     if (hasEmptyFields) {
       return toast.error("Please fill in all fields");
     }
-    const res = await fetch(`${API_URL}/events`, {
+    const res = await fetch(`${API_URL}/api/events`, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",
