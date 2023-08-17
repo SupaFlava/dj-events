@@ -42,14 +42,29 @@ export default function EventPage({ evt }) {
     </Layout>
   );
 }
-
-export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/events?slug=${slug}`);
+export async function getStaticPaths() {
+  const res = await fetch(`${API_URL}/api/events`);
   const events = await res.json();
+
+  const paths = events.data.map((evt) => ({
+    params: { slug: evt.attributes.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+export async function getServerSideProps({ query: { slug } }) {
+  const res = await fetch(
+    `${API_URL}/api/events?filters[slug]=${slug}&populate=%2A`
+  );
+  const events = await res.json();
+  const evt = events.data.find((item) => item.attributes.slug == slug);
 
   return {
     props: {
-      evt: events[0],
+      evt,
     },
   };
 }

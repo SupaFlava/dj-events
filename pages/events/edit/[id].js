@@ -189,8 +189,9 @@ export default function EditEventPage({ evt, token }) {
 
 export async function getServerSideProps({ params: { id }, req }) {
   const { token } = parseCookie(req);
-  const res = await fetch(`${API_URL}/events/${id}`);
-  const evt = await res.json();
+  const res = await fetch(`${API_URL}/api/events?populate=%2A`);
+  const events = await res.json();
+  const evt = events.data.find((event) => event.id === Number(id));
 
   return {
     props: {

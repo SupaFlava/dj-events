@@ -20,18 +20,22 @@ export default function SearchPage({ events }) {
 
 export async function getServerSideProps({ query: { term } }) {
   const query = qs.stringify({
-    _where: {
-      _or: [
-        { name_contains: term },
-        { performers_contains: term },
-        { venue_contains: term },
-        { description_contains: term },
+    filters: {
+      $or: [
+        { name: { $contains: term } },
+        { venue: { $contains: term } },
+        { performers: { $contains: term } },
+        { description: { $contains: term } },
       ],
     },
   });
-  const res = await fetch(`${API_URL}/events?${query}`);
+
+  const res = await fetch(`${API_URL}/api/events?${query}&populate=%2A`);
   const events = await res.json();
+
   return {
-    props: { events },
+    props: {
+      events: events.data,
+    },
   };
 }
