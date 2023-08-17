@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import router, { useRouter } from "next/router";
 import { NEXT_URL } from "@/config/index";
-import { async } from "regenerator-runtime";
 
 const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
