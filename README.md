@@ -1,5 +1,13 @@
 # dj events - Frontend
 
+Dj events screenshot
+
+<div style="display: flex; justify-content: space-between">
+<img src="./screenshots/mainpage.png" alt="Main page" width="40%">
+<img src="./screenshots/createevent.png" alt="create event" width="40%">
+
+</div>
+
 ## Table of Contents
 
 - [Description](#description)
@@ -39,3 +47,11 @@ The frontend of the Music Events Application is built using the following techno
 - React
 - JSON Web Tokens (JWT)
 - Cloudinary
+
+## Still to be done
+
+While the Dj Events Application has made significant progress, there are a few areas that require attention. Your contributions are welcome in resolving these issues:
+
+- Redirect After User Login: Currently, there's an issue with the redirection after a user successfully logs in. We need to ensure that users are directed to the appropriate page upon successful authentication.
+
+- Image URL Issue: There's an issue related to image URLs in the application. Some images may not be displaying correctly due to incorrect or broken URLs. This needs to be investigated and fixed to ensure a seamless user experience.
