@@ -11,7 +11,7 @@ const DashboardPage = ({ events, token }) => {
 
   const deleteEvent = async (id) => {
     if (confirm("Are you sure?")) {
-      const res = await fetch(`${API_URL}/api/events/${id}`, {
+      const res = await fetch(`${API_URL}events/${id}`, {
         method: "delete",
         headers: {
           Authorization: `Bearer ${token}`,
