@@ -22,7 +22,7 @@ export default function EventPage({ evt }) {
             <Image
               src={
                 evt.image.data
-                  ? evt.image.data.attributes.formats.small.url
+                  ? evt.image.formats.thumbnail.url
                   : "/images/event-default.png"
               }
               width={1920}
