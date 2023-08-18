@@ -11,7 +11,7 @@ const DashboardPage = ({ events, token }) => {
 
   const deleteEvent = async (id) => {
     if (confirm("Are you sure?")) {
-      const res = await fetch(`${API_URL}events/${id}`, {
+      const res = await fetch(`${API_URL}/events/${id}`, {
         method: "delete",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ export default DashboardPage;
 export async function getServerSideProps({ req }) {
   const { token } = parseCookies(req);
 
-  const res = await fetch(`${API_URL}/events/me`, {
+  const res = await fetch(`${API_URL}/account/me`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
