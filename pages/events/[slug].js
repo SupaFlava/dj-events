@@ -19,6 +19,7 @@ export default function EventPage({ evt }) {
         <ToastContainer />
         {evt.image && (
           <div className={styles.image}>
+            {console.log(evt.image)}
             <Image
               src={
                 evt.image.data
