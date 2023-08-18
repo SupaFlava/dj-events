@@ -13,14 +13,18 @@ export default function EventPage({ evt }) {
       <h1>My Event</h1>
       <div className={styles.event}>
         <span>
-          {new Date(evt.date).toLocaleDateString()} at {evt.time}
+          {new Date(evt.date).toLocaleDateString("en-US")} at {evt.time}
         </span>
         <h1>{evt.name}</h1>
         <ToastContainer />
         {evt.image && (
           <div className={styles.image}>
             <Image
-              src={evt.image.formats.medium.url}
+              src={
+                evt.image.data
+                  ? evt.image.data.attributes.formats.small.url
+                  : "/images/event-default.png"
+              }
               width={1920}
               height={1005}
               alt={evt.name}
