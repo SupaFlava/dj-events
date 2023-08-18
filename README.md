@@ -13,6 +13,7 @@ Dj events screenshot
 - [Description](#description)
 - [Getting Started](#getting-started)
 - [Technologies](#technologies)
+- [Still to be done](#Still-to-be-done)
 
 ## Description
 
