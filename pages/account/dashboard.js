@@ -44,7 +44,7 @@ export default DashboardPage;
 export async function getServerSideProps({ req }) {
   const { token } = parseCookies(req);
 
-  const res = await fetch(`${API_URL}/account/me`, {
+  const res = await fetch(`${API_URL}/events/me`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
