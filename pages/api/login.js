@@ -24,7 +24,7 @@ export default async (req, res) => {
           httpyOnly: true,
           secure: process.env.NODE_ENV !== "development",
           maxAge: 60 * 60 * 24 * 30, // 1 month
-          someSite: "strict",
+          sameSite: "strict",
           path: "/",
         })
       );
